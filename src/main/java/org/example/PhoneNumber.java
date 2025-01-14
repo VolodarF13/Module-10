@@ -26,16 +26,6 @@ import java.util.regex.Pattern;
 
 public class PhoneNumber {
 
-/*    public void writeFile(String text) {
-        File file = new File("fileNumbers.txt");
-        try (FileWriter writer = new FileWriter(file)) {
-            writer.write(text);
-            writer.flush();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }*/
-
     public void readFile(String filePath){
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
