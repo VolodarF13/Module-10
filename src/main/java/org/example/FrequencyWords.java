@@ -35,9 +35,9 @@ import java.util.*;
 
 public class FrequencyWords {
 
-    public HashMap<String, Integer> readFile(String filePath) {
+    public Map<String, Integer> readFile(String filePath) {
 
-        HashMap<String, Integer> words = new HashMap<>();
+        Map <String, Integer> words = new HashMap<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -53,13 +53,13 @@ public class FrequencyWords {
         return words;
     }
 
-    private List<Map.Entry<String, Integer>> sortWords(HashMap<String, Integer> words){
+    private List<Map.Entry<String, Integer>> sortWords(Map<String, Integer> words){
         List<Map.Entry<String, Integer>> sortedWords = new ArrayList<>(words.entrySet());
         sortedWords.sort((a, b) -> b.getValue().compareTo(a.getValue()));
         return sortedWords;
     }
 
-    public void printFiles(HashMap<String, Integer> words){
+    public void printFiles(Map<String, Integer> words){
         for (Map.Entry<String, Integer> entry : sortWords(words)) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
